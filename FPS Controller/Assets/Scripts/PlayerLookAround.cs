@@ -10,8 +10,9 @@ public class PlayerLookAround : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //hiding and locking the mouse
-        Cursor.lockState = CursorLockMode.Locked;
+        //hiding the mouse
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame

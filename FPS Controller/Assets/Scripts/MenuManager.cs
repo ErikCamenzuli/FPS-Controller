@@ -13,15 +13,17 @@ public class MenuManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            //opening pause panel
             if(!pausePanel.activeInHierarchy)
             {
                 Cursor.visible = true;
                 PauseGame();
             }
+            //closing pause panel
             else if(pausePanel.activeInHierarchy)
             {
-                Cursor.visible = false;
                 UnpauseGame();
+                Cursor.visible = false;
             }
         }
                
@@ -38,6 +40,7 @@ public class MenuManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
+        Cursor.visible = false;
         Debug.Log("Game Unpased");
     }
 
