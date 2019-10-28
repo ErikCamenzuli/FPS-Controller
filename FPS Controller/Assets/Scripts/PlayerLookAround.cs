@@ -11,7 +11,7 @@ public class PlayerLookAround : MonoBehaviour
     void Start()
     {
         //hiding the mouse
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
