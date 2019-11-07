@@ -23,6 +23,7 @@ public class Gun : MonoBehaviour
 
     public Animator animator;
 
+
     void Start()
     {
         currentAmmo = maxAmmo;
@@ -45,6 +46,17 @@ public class Gun : MonoBehaviour
     {
         if(isReloading)
         {
+            return;
+        }
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            if(currentAmmo == maxAmmo)
+            {
+                return;
+            }
+
+            StartCoroutine(Reload());
             return;
         }
 
