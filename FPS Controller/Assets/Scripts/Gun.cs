@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Gun : MonoBehaviour
@@ -16,10 +17,12 @@ public class Gun : MonoBehaviour
     public int maxAmmo = 50;
     public float reloadTime = 5f;
     private int currentAmmo;
+    public Text currentAmmoText;
 
     private bool isReloading = false;
 
     public Animator animator;
+
 
     void Start()
     {
@@ -33,11 +36,27 @@ public class Gun : MonoBehaviour
         animator.SetBool("Reloading", false);
     }
 
+    void OnGUI()
+    {
+        currentAmmoText.text = "Ammo: " + currentAmmo + "/" + maxAmmo.ToString();    
+    }
+
     // Update is called once per frame
     void Update()
     {
         if(isReloading)
         {
+            return;
+        }
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            if(currentAmmo == maxAmmo)
+            {
+                return;
+            }
+
+            StartCoroutine(Reload());
             return;
         }
 
