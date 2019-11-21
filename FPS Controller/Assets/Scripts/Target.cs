@@ -9,7 +9,7 @@ public class Target : MonoBehaviour
 
     void Start()
     {
-        currentHp = hp;
+        currentHp = hp;               
     }
 
     void OnGUI()

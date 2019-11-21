@@ -11,7 +11,6 @@ public class MenuManager : MonoBehaviour
 
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             //opening pause panel
@@ -23,14 +22,11 @@ public class MenuManager : MonoBehaviour
             //closing pause panel
             else if(pausePanel.activeInHierarchy)
             {
-                Cursor.visible = false;
                 UnpauseGame();
+                Cursor.visible = false;
             }
         }
-
-        if (pausePanel != null)
-            return;
-
+               
     }
 
     public void PauseGame()
@@ -48,9 +44,11 @@ public class MenuManager : MonoBehaviour
         Debug.Log("Game Unpased");
     }
 
-    public void SelectLevel(string levelName)
+    public void QuitGame()
     {
-        SceneManager.LoadScene(levelName);
+        //NO MAIN MENU YET
+        Debug.Log("Game Quit, Main Menu Loaded");
+        SceneManager.LoadScene("MainMenu");
     }
 
 }
