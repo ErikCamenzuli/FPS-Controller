@@ -9,8 +9,12 @@ public class Target : MonoBehaviour
 
     void Start()
     {
-        currentHp = hp;
-        hpText.text = "HP: " + currentHp + "/" + hp.ToString();                    
+        currentHp = hp;               
+    }
+
+    void OnGUI()
+    {
+        hpText.text = "HP: " + hp + "/" + currentHp.ToString();
     }
 
     public void TakeDamage(float amount)
