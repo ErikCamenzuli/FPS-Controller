@@ -7,8 +7,8 @@ public class Gun : MonoBehaviour
     public float damage = 10f;
     public float range = 10f;
     public float impactForce = 10f;
-    public float fireRate = 15f;
-    private float nextTimeToFire = 0f;
+    public float fireRate;
+    private float nextTimeToFire;
 
     public Camera fpsCamera;
     //public ParticleSystem muzzleFlashParticle;
@@ -49,6 +49,7 @@ public class Gun : MonoBehaviour
             return;
         }
 
+
         if(Input.GetKeyDown(KeyCode.R))
         {
             if(currentAmmo == maxAmmo)
@@ -68,7 +69,7 @@ public class Gun : MonoBehaviour
 
         if(Input.GetButton("Fire1"))
         {
-            nextTimeToFire = Time.time + 1f / fireRate;
+            nextTimeToFire = Time.time +1f / fireRate;
             Shoot();
             Debug.Log("FIRE!");
         }
