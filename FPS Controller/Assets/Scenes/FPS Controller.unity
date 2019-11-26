@@ -1350,7 +1350,7 @@ MonoBehaviour:
   fpsCamera: {fileID: 534669904}
   impactEffects: {fileID: 154409267}
   maxAmmo: 30
-  reloadTime: 5
+  reloadTime: 2.5
   currentAmmoText: {fileID: 437681066}
   animator: {fileID: 1303377501}
 --- !u!23 &1303377499

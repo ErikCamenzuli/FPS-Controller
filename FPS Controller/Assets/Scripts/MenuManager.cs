@@ -6,6 +6,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
     void Start()
     {
+        if (pausePanel != null)
+            return;
+
         pausePanel.SetActive(false);
     }
 
