@@ -13,10 +13,17 @@ public class Target : MonoBehaviour
     public AudioClip soundClip;
     public AudioSource soundSource;
 
+    public GameObject gameObjectRespawn;
+
     void Start()
     {
         soundSource.clip = soundClip;
         currentHp = hp;
+    }
+
+    void Awake()
+    {
+        RespawnObject();        
     }
 
     void OnGUI()
@@ -42,6 +49,15 @@ public class Target : MonoBehaviour
     void Death()
     {
         Destroy(gameObject);
+    }
+
+    void RespawnObject()
+    {
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            Instantiate(gameObjectRespawn.gameObject);
+            hp = 50f;            
+        }
     }
 
 }
