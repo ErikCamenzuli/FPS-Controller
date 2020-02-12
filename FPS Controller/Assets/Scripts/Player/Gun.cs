@@ -46,29 +46,36 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //checking if the player is reloading
         if(isReloading)
         {
+            //return nothing
             return;
         }
 
-
+        //If the player presses the "R" keybind
         if(Input.GetKeyDown(KeyCode.R))
         {
+            //checks if the currentAmmo is equaled to maxAmmo
             if(currentAmmo == maxAmmo)
             {
+                //returns nothing
                 return;
             }
-
+            //Calls and starts the Reload() Co-routine
             StartCoroutine(Reload());
             return;
         }
-
+        //if the currentAmmo is less than or equaled to 0
         if(currentAmmo <= 0)
         {
+            //start the Reload() Coroutine
             StartCoroutine(Reload());
             return;
         }
-
+        //checking if the player press left mouse button
+        //"Fire1" = Left Mouse Button
+        //and checks if the time is greater than the nextTimeToFire
         if(Input.GetButton("Fire1") && Time.time > nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
