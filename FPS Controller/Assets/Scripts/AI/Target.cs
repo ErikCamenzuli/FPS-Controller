@@ -31,17 +31,6 @@ public class Target : MonoBehaviour
 
         GameObject effect = (GameObject)Instantiate(damageEffects, transform.position,transform.rotation);
         Destroy(effect, 2f);
-
-        
-        if (hp <= 0f)
-        {
-            Death();
-        }
-    }
-
-    void Death()
-    {
-        Destroy(gameObject);
     }
 
 }
