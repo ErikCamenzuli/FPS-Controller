@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu.unity
     guid: 28e8532fe3f9dc74ab626b5da7c95303
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FPS Controller.unity
     guid: 857863c4b50c1824988ad6ebd0728740
+  - enabled: 1
+    path: Assets/Scenes/rubegoldberg.unity
+    guid: 8f5446458ad504f4db27b35e9f7e186b
   m_configObjects: {}

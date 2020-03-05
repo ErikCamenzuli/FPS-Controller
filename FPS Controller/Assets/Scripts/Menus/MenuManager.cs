@@ -51,9 +51,4 @@ public class MenuManager : MonoBehaviour
         Debug.Log("Game Unpased");
     }
 
-    public void SelectLevel(string levelName)
-    {
-        SceneManager.LoadScene(levelName);
-    }
-
 }
